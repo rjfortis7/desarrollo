@@ -1,0 +1,49 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible",content="ie=edge")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    block head
+      title Landing
+    link(rel="stylesheet", href="../css/home.css")  
+    block blockcss
+      //custom css
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700" rel="stylesheet">
+  body
+    section.block-top
+      .ed-container
+        .ed-item
+          include _block-top
+    header.ed-container.header
+      .ed-item.s-80.l-15.myitem-1
+        include _block-logo
+      .ed-item.s-20.cross-center.main-end.myitem-2.pr-10
+        .nav-toggle#main-nav-toggle
+      .ed-item.s-100.l-85.cross-center.main-end.myitem-3
+        .nav-container#nav-container
+          .ed-container
+            .ed-item
+              nav.main-nav#main-nav
+                include _block-menu
+      //block banner
+    if bannertype === "slider"
+      include _slider
+    else if bannertype === "bannerlogo"
+      include _bannerlogo
+    else if bannertype === "bannerquote"
+      include _bannerquote
+    else if bannertype === "banner-copy"
+      include _banner-copy
+    //block postbanner
+    block postbanner-productos
+    block logo-productos
+    block info-productos
+    if footertype === "clips"
+      include _footer-productos-clips
+    else
+      include _footer-productos
+    script(src="https://code.jquery.com/jquery-2.2.0.min.js")
+    //script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+    script(src="../js/ed-grid.js")
+    block scripts
